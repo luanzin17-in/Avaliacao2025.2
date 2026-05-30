@@ -1,0 +1,28 @@
+ public static int contarMaioresQue(Pessoa[] v, int qtd, int idadeMinima) {
+
+        int cont = 0;
+        for (int i = 0; i < qtd; i++) {
+            if (v[i].idade >= idadeMinima) {
+                cont++;
+            }
+        }
+
+        return cont;
+    }
+    public static void main(String[] args) {
+
+        Pessoa[] pessoas = new Pessoa[100];
+        int qtd = 0;
+
+        qtd = cadastrarPessoa(pessoas, qtd);
+        qtd = cadastrarPessoa(pessoas, qtd);
+
+        imprimirPessoas(pessoas, qtd);
+
+        System.out.println("Indice da mais velha com IMC de magreza: "
+                + maisVelhaIMCMagreza(pessoas, qtd));
+        insertionSortPorNome(pessoas, qtd);
+        System.out.println("Quantidade de pessoas com idade >= 18: "
+                + contarMaioresQue(pessoas, qtd, 18));
+    }
+}
